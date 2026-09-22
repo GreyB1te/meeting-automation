@@ -1,0 +1,11 @@
+Customer: ACME Manufacturing
+
+The customer currently tracks machine production using Excel.
+They want a centralized production monitoring dashboard.
+
+They need the first version by December.
+
+Marko will send the machine data by Friday.
+
+The customer also asked whether the system could eventually
+send alerts when a machine stops.
