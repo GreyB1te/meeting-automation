@@ -130,3 +130,31 @@ This provides a control point where incorrect AI interpretation can be detected 
 This is a demonstration prototype rather than a production-ready business integration.
 
 In a production implementation, the failure-handling mechanism could be replaced or extended with a persistent message queue, automatic background retries, authentication, monitoring, and idempotency mechanisms to prevent duplicate records.
+
+## Testing
+
+### Success case
+
+Start the mock business-system API:
+
+node index.js
+
+In another terminal:
+
+node process-meeting.js
+
+Approve the extracted data when prompted with `y`.
+
+The data should be sent successfully to the mock API.
+
+### Failure case
+
+Do not start `index.js`.
+
+Run:
+
+node process-meeting.js
+
+Approve the extracted data with `y`.
+
+The application will retry the API request three times. If all attempts fail, the approved payload is saved in `failed-requests/` for later processing.
